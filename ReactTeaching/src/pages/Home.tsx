@@ -1,8 +1,8 @@
-import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
-
 export const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <h1>Главная</h1>
+      <p>Добро пожаловать на главную страницу!</p>
+    </div>
   );
 }
