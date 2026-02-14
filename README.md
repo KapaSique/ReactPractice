@@ -19,16 +19,16 @@
 
 ## 📖 О проекте
 
-Многостраничное веб-приложение, созданное в рамках пар по "Технологии сети интернет" по React. Проект демонстрирует современный стек фронтенд-разработки (мб еще бэк будет): маршрутизацию, компонентную архитектуру, адаптивную вёрстку и работу с UI-библиотеками.
+Многостраничное веб-приложение, созданное в рамках курса "Технологии сети интернет". Проект демонстрирует современный стек фронтенд-разработки: маршрутизацию, компонентную архитектуру, адаптивную вёрстку и работу с UI-библиотеками.
 
 ## 🛠 Стек технологий
 
 | Категория | Технологии |
 |-----------|-----------|
-| **Фреймворк** | ![React](https://img.shields.io/badge/-React_19-61DAFB?style=flat-square&logo=react&logoColor=black) ![React Router](https://img.shields.io/badge/-React_Router_7-CA4245?style=flat-square&logo=reactrouter&logoColor=white) |
-| **UI** | ![Shadcn/ui](https://img.shields.io/badge/-shadcn/ui-000000?style=flat-square&logo=shadcnui&logoColor=white) ![Radix UI](https://img.shields.io/badge/-Radix_UI-161618?style=flat-square&logo=radixui&logoColor=white) ![Lucide](https://img.shields.io/badge/-Lucide_Icons-F56565?style=flat-square) |
-| **Стили** | ![TailwindCSS](https://img.shields.io/badge/-Tailwind_CSS_4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) ![CSS](https://img.shields.io/badge/-CSS_Variables-1572B6?style=flat-square&logo=css3&logoColor=white) |
-| **Сборка** | ![Vite](https://img.shields.io/badge/-Vite_7-646CFF?style=flat-square&logo=vite&logoColor=white) ![ESLint](https://img.shields.io/badge/-ESLint_9-4B32C3?style=flat-square&logo=eslint&logoColor=white) |
+| **Фреймворк** | ![React](https://img.shields.io/badge/-React_19.2-61DAFB?style=flat-square&logo=react&logoColor=black) ![React Router](https://img.shields.io/badge/-React_Router_7.13-CA4245?style=flat-square&logo=reactrouter&logoColor=white) |
+| **UI** | ![Shadcn/ui](https://img.shields.io/badge/-shadcn/ui-000000?style=flat-square&logo=shadcnui&logoColor=white) ![Radix UI](https://img.shields.io/badge/-Radix_UI-161618?style=flat-square&logo=radixui&logoColor=white) ![Headless UI](https://img.shields.io/badge/-Headless_UI-66E3FF?style=flat-square&logo=headlessui&logoColor=black) ![Lucide](https://img.shields.io/badge/-Lucide_Icons-F56565?style=flat-square) ![Heroicons](https://img.shields.io/badge/-Heroicons-8B5CF6?style=flat-square) |
+| **Стили** | ![TailwindCSS](https://img.shields.io/badge/-Tailwind_CSS_4.1-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) ![tw-animate](https://img.shields.io/badge/-tw--animate--css-06B6D4?style=flat-square) ![CSS](https://img.shields.io/badge/-CSS_Variables-1572B6?style=flat-square&logo=css3&logoColor=white) |
+| **Сборка** | ![Vite](https://img.shields.io/badge/-Vite_7.2-646CFF?style=flat-square&logo=vite&logoColor=white) ![ESLint](https://img.shields.io/badge/-ESLint_9-4B32C3?style=flat-square&logo=eslint&logoColor=white) |
 | **Язык** | ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) |
 
 ## 📁 Структура проекта
@@ -61,7 +61,7 @@ src/
 - 📱 **Адаптивность** — мобильное бургер-меню + десктопная навигация
 - 🎨 **Темизация** — система CSS-переменных с поддержкой тёмной темы
 - ♿ **Доступность** — Radix UI примитивы с ARIA-атрибутами
-- ⚡ **Лютейшая сборка** — Vite с HMR для мгновенной перезагрузки
+- ⚡ **Быстрая сборка** — Vite с HMR для мгновенной перезагрузки
 - 🧩 **Компонентная архитектура** — переиспользуемые UI-компоненты
 
 ## 🚀 Быстрый старт
@@ -85,16 +85,16 @@ npm install
 npm run dev
 ```
 
-Приложение будет доступно по адресу **http://localhost:5173** локалка индеппаи киьи
+Приложение будет доступно по адресу **http://localhost:5173**
 
 ### Другие команды
 
 | Команда | Описание |
 |---------|----------|
-| `npm run dev` | 🔥 Запуск dev-сервера с HMR |
-| `npm run build` | 📦 Сборка для продакшена |
-| `npm run preview` | 👀 Предпросмотр продакшен-сборки |
-| `npm run lint` | 🔍 Проверка кода через ESLint |
+| `npm run dev` | Запуск dev-сервера с HMR |
+| `npm run build` | Сборка для продакшена |
+| `npm run preview` | Предпросмотр продакшен-сборки |
+| `npm run lint` | Проверка кода через ESLint |
 
 ## 🗺 Страницы
 
@@ -114,7 +114,7 @@ npm run dev
 
 <div align="center">
 
-Эщкере
+Made with ❤️
 
 ![React](https://img.shields.io/badge/Made_with-React-61DAFB?style=for-the-badge&logo=react&logoColor=white)
 
