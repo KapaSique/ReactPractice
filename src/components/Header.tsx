@@ -72,7 +72,7 @@ export const Header = () => {
           </SheetTrigger>
           <SheetContent side="right">
             <SheetHeader>
-              <SheetTitle className="text-left">RRReact</SheetTitle>
+              <SheetTitle className="text-left bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">RRReact</SheetTitle>
             </SheetHeader>
             <nav className="flex flex-col gap-2 px-4">
               {navLinks.map((link) => (
