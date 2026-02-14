@@ -31,7 +31,7 @@ export const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-14 items-center justify-between px-4">
 
-        <Link to="/" className="text-xl font-bold tracking-tight">
+        <Link to="/" className="text-xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent transition-opacity hover:opacity-80">
           RRReact
         </Link>
 
@@ -42,7 +42,7 @@ export const Header = () => {
               <NavigationMenuItem key={link.to}>
                 <NavigationMenuLink
                   asChild
-                  className={navigationMenuTriggerStyle()}
+                  className={`${navigationMenuTriggerStyle()} relative after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:-translate-x-1/2 after:bg-primary after:transition-all after:duration-300 hover:after:w-3/4 ${location.pathname === link.to ? "after:w-3/4" : ""}`}
                   data-active={location.pathname === link.to}
                 >
                   <Link to={link.to}>{link.label}</Link>
