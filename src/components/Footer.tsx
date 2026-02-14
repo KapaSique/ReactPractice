@@ -8,9 +8,9 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { href: "https://github.com", icon: Github, label: "GitHub" },
-  { href: "mailto:info@example.com", icon: Mail, label: "Email" },
-  { href: "https://t.me", icon: MessageCircle, label: "Telegram" },
+  { href: "https://github.com/KapaSique", icon: Github, label: "GitHub" },
+  { href: "mailto:batteryofsprunk@gmail.com", icon: Mail, label: "Email" },
+  { href: "https://t.me/stelmahhh", icon: MessageCircle, label: "Telegram" },
 ];
 
 export const Footer = () => {
@@ -18,7 +18,7 @@ export const Footer = () => {
     <footer className="border-t bg-muted/40">
       <div className="container mx-auto px-4 py-10">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
-          {/* Brand */}
+
           <div className="space-y-3">
             <Link
               to="/"
@@ -27,12 +27,11 @@ export const Footer = () => {
               RRReact
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Современное React-приложение, созданное с использованием Vite,
+              Чуток реакта с использованием Vite,
               Tailwind CSS и shadcn/ui.
             </p>
           </div>
 
-          {/* Navigation */}
           <div className="space-y-3">
             <h3 className="text-sm font-semibold">Навигация</h3>
             <nav className="flex flex-col gap-2">
@@ -48,7 +47,6 @@ export const Footer = () => {
             </nav>
           </div>
 
-          {/* Contacts & Social */}
           <div className="space-y-3">
             <h3 className="text-sm font-semibold">Контакты</h3>
             <p className="text-sm text-muted-foreground">
@@ -71,7 +69,6 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Divider & Copyright */}
         <div className="mt-10 border-t pt-6 text-center text-sm text-muted-foreground">
           &copy; {new Date().getFullYear()} RRReact. Все права защищены.
         </div>
