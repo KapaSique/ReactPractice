@@ -23,7 +23,7 @@ export const Footer = () => {
               IVT Merch Lab
             </Link>
             <p className="max-w-sm text-sm text-muted-foreground">
-              Премиальный ИВТ-каталог со светлым liquid-glass стилем, студийной подачей
+              Премиальный ИВТ-каталог с тёмным liquid-glass стилем, студийной подачей
               вещей и тех-аксессуаров.
             </p>
           </div>

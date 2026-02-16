@@ -36,24 +36,24 @@
 
 :root {
   --radius: 1rem;
-  --background: oklch(0.985 0.01 95.5);
-  --foreground: oklch(0.27 0.03 248);
-  --card: oklch(1 0 0 / 82%);
-  --card-foreground: oklch(0.27 0.03 248);
-  --popover: oklch(1 0 0 / 90%);
-  --popover-foreground: oklch(0.27 0.03 248);
-  --primary: oklch(0.62 0.17 233);
-  --primary-foreground: oklch(0.985 0.004 260);
-  --secondary: oklch(0.94 0.03 202);
-  --secondary-foreground: oklch(0.32 0.04 244);
-  --muted: oklch(0.95 0.01 240);
-  --muted-foreground: oklch(0.52 0.03 246);
-  --accent: oklch(0.95 0.05 190);
-  --accent-foreground: oklch(0.32 0.04 244);
+  --background: oklch(0.18 0.02 262);
+  --foreground: oklch(0.95 0.01 250);
+  --card: oklch(0.22 0.02 258 / 82%);
+  --card-foreground: oklch(0.95 0.01 250);
+  --popover: oklch(0.2 0.02 258 / 92%);
+  --popover-foreground: oklch(0.95 0.01 250);
+  --primary: oklch(0.76 0.14 212);
+  --primary-foreground: oklch(0.18 0.02 262);
+  --secondary: oklch(0.28 0.02 256);
+  --secondary-foreground: oklch(0.95 0.01 250);
+  --muted: oklch(0.25 0.01 252);
+  --muted-foreground: oklch(0.75 0.02 250);
+  --accent: oklch(0.28 0.02 238);
+  --accent-foreground: oklch(0.95 0.01 250);
   --destructive: oklch(0.64 0.24 26);
-  --border: oklch(0.84 0.03 238 / 0.8);
-  --input: oklch(1 0 0 / 0.75);
-  --ring: oklch(0.72 0.11 221);
+  --border: oklch(0.42 0.02 250 / 0.8);
+  --input: oklch(0.3 0.02 250 / 0.8);
+  --ring: oklch(0.72 0.12 212);
 }
 
 .dark {
@@ -87,10 +87,10 @@
     font-family: "Manrope", "SF Pro Text", "Segoe UI", sans-serif;
     min-height: 100vh;
     background-image:
-      radial-gradient(circle at 14% 20%, rgba(172, 222, 255, 0.46), transparent 36%),
-      radial-gradient(circle at 84% 4%, rgba(198, 255, 245, 0.58), transparent 30%),
-      radial-gradient(circle at 85% 78%, rgba(222, 217, 255, 0.36), transparent 38%),
-      linear-gradient(180deg, #f8fbff 0%, #f5f7ff 100%);
+      radial-gradient(circle at 14% 20%, rgba(34, 211, 238, 0.2), transparent 36%),
+      radial-gradient(circle at 84% 4%, rgba(59, 130, 246, 0.2), transparent 30%),
+      radial-gradient(circle at 85% 78%, rgba(139, 92, 246, 0.16), transparent 38%),
+      linear-gradient(180deg, #0b1020 0%, #090e1b 100%);
     background-attachment: fixed;
   }
 
@@ -157,24 +157,24 @@
 .glass-soft,
 .glass-strong {
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.26);
   backdrop-filter: blur(16px) saturate(160%);
   -webkit-backdrop-filter: blur(16px) saturate(160%);
   box-shadow:
-    0 12px 35px rgba(88, 118, 166, 0.14),
-    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    0 20px 40px rgba(2, 6, 23, 0.48),
+    inset 0 1px 0 rgba(148, 163, 184, 0.15);
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.56);
+  background: rgba(10, 15, 29, 0.62);
 }
 
 .glass-soft {
-  background: rgba(255, 255, 255, 0.42);
+  background: rgba(10, 15, 29, 0.48);
 }
 
 .glass-strong {
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(10, 15, 29, 0.74);
 }
 
 .glass::after,
@@ -185,8 +185,8 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.35), transparent 35%);
-  opacity: 0.65;
+  background: linear-gradient(120deg, rgba(148, 163, 184, 0.2), transparent 35%);
+  opacity: 0.72;
 }
 
 .stagger-in {
@@ -250,15 +250,38 @@
   background:
     linear-gradient(
       115deg,
-      oklch(0.47 0.16 236),
-      oklch(0.63 0.2 221),
-      oklch(0.57 0.22 290),
-      oklch(0.46 0.16 236)
+      oklch(0.88 0.08 215),
+      oklch(0.78 0.18 212),
+      oklch(0.8 0.15 268),
+      oklch(0.88 0.08 215)
     );
   background-size: 210% 210%;
   -webkit-background-clip: text;
   background-clip: text;
   animation: text-flow 7.5s ease infinite;
+}
+
+.premium-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(75px);
+  opacity: 0.45;
+}
+
+.premium-orb-cyan {
+  left: -12rem;
+  top: -6rem;
+  height: 30rem;
+  width: 30rem;
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.45), transparent 64%);
+}
+
+.premium-orb-violet {
+  right: -14rem;
+  bottom: 5rem;
+  height: 34rem;
+  width: 34rem;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.45), transparent 65%);
 }
 
 .floating-pill {
