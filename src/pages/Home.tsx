@@ -52,6 +52,16 @@ const products = [
     tech: ["260 GSM", "Drop Shoulder", "Street Cut"],
   },
   {
+    title: "IVT Signal Tee Red",
+    category: "Футболка",
+    price: "2 590 ₽",
+    image: "/catalog/tshirt-03.jpg",
+    tag: "Color Drop",
+    description: "Акцентный красный цвет, гладкая текстура ткани и чистый силуэт.",
+    sizes: ["S", "M", "L", "XL"],
+    tech: ["240 GSM", "Colorfast", "Relaxed Fit"],
+  },
+  {
     title: "IVT iPhone 17 Case",
     category: "Чехол",
     price: "1 790 ₽",
@@ -87,17 +97,17 @@ const products = [
     price: "3 990 ₽",
     image: "/catalog/macbook-case-01.jpg",
     tag: "Mac Series",
-    description: "Минималистичный рукав для Pro-серии с плотной амортизацией.",
+    description: "Чистый белый sleeve для Pro-серии с мягкой подкладкой и плотным zip.",
     compatibility: ["MacBook Pro 14 (M5/M4 Pro)", "MacBook Pro 16 (M5/M4 Max)"],
     tech: ["Zip Guard", "Padded Walls", "Water Repel"],
   },
   {
-    title: "IVT MacBook Air Tactical Sleeve",
+    title: "IVT MacBook Air Graphite Sleeve",
     category: "Чехол Mac",
     price: "4 290 ₽",
-    image: "/catalog/macbook-case-02.png",
+    image: "/catalog/macbook-case-02.jpg",
     tag: "Air Series",
-    description: "Легкий чехол для Air-линейки с акцентом на износостойкость.",
+    description: "Графитовый матовый sleeve для Air-линейки с премиальной текстурой.",
     compatibility: ["MacBook Air 13 (M4)", "MacBook Air 15 (M4)"],
     tech: ["Lightweight", "Impact Zones", "Travel Safe"],
   },
@@ -185,7 +195,7 @@ export const Home = () => {
             <div className="mt-4 grid grid-cols-2 gap-3">
               {[
                 ["24h", "Время обновления"],
-                ["9", "Премиум карточек"],
+                ["10", "Премиум карточек"],
                 ["+78%", "Визуальный импакт"],
                 ["100%", "Liquid glass vibe"],
               ].map(([value, label], idx) => (
