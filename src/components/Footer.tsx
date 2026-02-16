@@ -3,7 +3,7 @@ import { Github, Mail, MessageCircle } from "lucide-react";
 
 const navLinks = [
   { to: "/", label: "Главная" },
-  { to: "/about", label: "О нас" },
+  { to: "/about", label: "О проекте" },
   { to: "/contacts", label: "Контакты" },
 ];
 
@@ -15,31 +15,29 @@ const socialLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="border-t bg-muted/40">
-      <div className="container mx-auto px-4 py-10">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
-
+    <footer className="relative z-10 px-4 pb-6 sm:px-6 lg:px-10">
+      <div className="glass-soft mx-auto w-full max-w-7xl rounded-3xl p-6 sm:p-8">
+        <div className="grid gap-8 md:grid-cols-3">
           <div className="space-y-3">
-            <Link
-              to="/"
-              className="text-xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent"
-            >
-              RRReact
+            <Link to="/" className="font-display text-xl font-bold tracking-tight text-foreground">
+              Liquid Drop
             </Link>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              Чуток реакта с использованием Vite,
-              Tailwind CSS и shadcn/ui.
+            <p className="max-w-sm text-sm text-muted-foreground">
+              Светлый fashion-каталог с liquid-glass вайбом, живым motion и фотостудийной
+              подачей коллекций.
             </p>
           </div>
 
           <div className="space-y-3">
-            <h3 className="text-sm font-semibold">Навигация</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+              Навигация
+            </h3>
             <nav className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground w-fit"
+                  className="w-fit text-sm font-medium text-foreground/80 transition hover:text-primary"
                 >
                   {link.label}
                 </Link>
@@ -48,11 +46,11 @@ export const Footer = () => {
           </div>
 
           <div className="space-y-3">
-            <h3 className="text-sm font-semibold">Контакты</h3>
-            <p className="text-sm text-muted-foreground">
-              info@example.com
-            </p>
-            <div className="flex gap-3">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+              Связь
+            </h3>
+            <p className="text-sm text-foreground/80">batteryofsprunk@gmail.com</p>
+            <div className="flex gap-2">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -60,17 +58,17 @@ export const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                  className="glass inline-flex size-10 items-center justify-center rounded-xl text-foreground/80 transition hover:-translate-y-0.5 hover:text-primary"
                 >
-                  <social.icon className="size-5" />
+                  <social.icon className="size-4" />
                 </a>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="mt-10 border-t pt-6 text-center text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} RRReact. Все права защищены.
+        <div className="mt-8 border-t border-white/60 pt-4 text-center text-xs text-muted-foreground">
+          © {new Date().getFullYear()} Liquid Drop. Made for IMI Labs.
         </div>
       </div>
     </footer>

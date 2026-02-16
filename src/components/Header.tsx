@@ -1,14 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu } from "lucide-react";
+import { Sparkles, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
 import {
   Sheet,
   SheetContent,
@@ -19,7 +12,7 @@ import {
 
 const navLinks = [
   { to: "/", label: "Главная" },
-  { to: "/about", label: "О нас" },
+  { to: "/about", label: "О проекте" },
   { to: "/contacts", label: "Контакты" },
 ];
 
@@ -28,76 +21,90 @@ export const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto flex h-14 items-center justify-between px-4">
-
-        <Link to="/" className="text-xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent transition-opacity hover:opacity-80">
-          RRReact
+    <header className="sticky top-4 z-50 px-4 sm:px-6 lg:px-10">
+      <div className="glass mx-auto flex w-full max-w-7xl items-center justify-between rounded-2xl px-3 py-3 sm:px-5">
+        <Link
+          to="/"
+          className="font-display inline-flex items-center gap-2 text-lg font-bold tracking-tight text-foreground sm:text-xl"
+        >
+          <span className="flex size-8 items-center justify-center rounded-xl bg-primary/15 text-primary">
+            <Sparkles className="size-4" />
+          </span>
+          Liquid Drop
         </Link>
 
+        <nav className="hidden items-center gap-1 md:flex">
+          {navLinks.map((link) => {
+            const active = location.pathname === link.to;
 
-        <NavigationMenu className="hidden md:flex">
-          <NavigationMenuList>
-            {navLinks.map((link) => (
-              <NavigationMenuItem key={link.to}>
-                <NavigationMenuLink
-                  asChild
-                  className={`${navigationMenuTriggerStyle()} relative after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:-translate-x-1/2 after:bg-primary after:transition-all after:duration-300 hover:after:w-3/4 ${location.pathname === link.to ? "after:w-3/4" : ""}`}
-                  data-active={location.pathname === link.to}
-                >
-                  <Link to={link.to}>{link.label}</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            ))}
-          </NavigationMenuList>
-        </NavigationMenu>
+            return (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`rounded-xl px-4 py-2 text-sm font-semibold transition-all duration-300 ${
+                  active
+                    ? "bg-primary text-primary-foreground shadow-[0_8px_24px_rgba(2,132,199,0.35)]"
+                    : "text-muted-foreground hover:bg-white/70 hover:text-foreground"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+        </nav>
 
-
-        <div className="hidden md:flex items-center gap-2">
-          <Button variant="ghost" asChild>
+        <div className="hidden items-center gap-2 md:flex">
+          <Button variant="ghost" className="rounded-xl" asChild>
             <Link to="/login">Войти</Link>
           </Button>
-          <Button asChild>
-            <Link to="/register">Регистрация</Link>
+          <Button className="rounded-xl bg-primary/90 text-primary-foreground hover:bg-primary" asChild>
+            <Link to="/register">Залететь в дроп</Link>
           </Button>
         </div>
 
-
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="md:hidden">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="rounded-xl md:hidden"
+              aria-label="Открыть меню"
+            >
               <Menu className="size-5" />
-              <span className="sr-only">Меню</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right">
+
+          <SheetContent side="right" className="glass border-white/50">
             <SheetHeader>
-              <SheetTitle className="text-left bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">RRReact</SheetTitle>
+              <SheetTitle className="font-display text-left text-lg">Liquid Drop</SheetTitle>
             </SheetHeader>
-            <nav className="flex flex-col gap-2 px-4">
+
+            <nav className="mt-4 flex flex-col gap-2 px-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
                   onClick={() => setOpen(false)}
-                  className={`rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground ${
+                  className={`rounded-xl px-3 py-2 text-sm font-semibold transition ${
                     location.pathname === link.to
-                      ? "bg-accent text-accent-foreground"
-                      : ""
+                      ? "bg-primary text-primary-foreground"
+                      : "hover:bg-white/70"
                   }`}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="my-2 border-t" />
-              <Button variant="ghost" asChild className="justify-start">
+
+              <div className="my-2 border-t border-white/60" />
+
+              <Button variant="ghost" className="justify-start rounded-xl" asChild>
                 <Link to="/login" onClick={() => setOpen(false)}>
                   Войти
                 </Link>
               </Button>
-              <Button asChild className="justify-start">
+              <Button className="justify-start rounded-xl" asChild>
                 <Link to="/register" onClick={() => setOpen(false)}>
-                  Регистрация
+                  Залететь в дроп
                 </Link>
               </Button>
             </nav>
