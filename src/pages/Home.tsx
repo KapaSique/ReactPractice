@@ -1,110 +1,156 @@
 import {
   ArrowRight,
+  Atom,
+  Cable,
+  Cpu,
   Orbit,
-  ShieldCheck,
-  Shirt,
+  ShieldAlert,
   Sparkles,
-  Smartphone,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const products = [
   {
-    title: "Lavender Drift Hoodie",
+    title: "IVT Quantum Hoodie",
     category: "Худи",
     price: "4 990 ₽",
     image: "/catalog/hoodie-01.jpg",
-    tag: "Studio Fit",
-    description: "Мягкий объёмный крой с чистой студийной пластикой ткани.",
+    tag: "Drop 01",
+    description: "Плотный хлопок, мягкий внутренний слой и clean-графика ИВТ.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    tech: ["430 GSM", "Fleece Inside", "Unisex"],
   },
   {
-    title: "Blue Pulse Hoodie",
+    title: "IVT Compiler Hoodie",
     category: "Худи",
     price: "5 290 ₽",
     image: "/catalog/hoodie-02.jpg",
     tag: "Limited",
-    description: "Глубокий цвет и плотный хлопок для уверенного силуэта.",
+    description: "Глубокий цвет, архитектурный крой и премиальная фурнитура.",
+    sizes: ["S", "M", "L", "XL"],
+    tech: ["Oversize", "Reinforced Seams", "Heavy Cotton"],
   },
   {
-    title: "Cloud Core Tee",
+    title: "IVT Core Tee White",
     category: "Футболка",
     price: "2 390 ₽",
     image: "/catalog/tshirt-01.jpg",
     tag: "Best Seller",
-    description: "Базовая белая футболка в clean-стиле без лишнего шума.",
+    description: "Чистая база для daily-fit: ровный силуэт и плотный ворот.",
+    sizes: ["XS", "S", "M", "L", "XL", "XXL"],
+    tech: ["240 GSM", "Soft Touch", "Straight Fit"],
   },
   {
-    title: "Oversize Back Tee",
+    title: "IVT Night Ops Tee",
     category: "Футболка",
-    price: "2 690 ₽",
+    price: "2 790 ₽",
     image: "/catalog/tshirt-02.jpg",
-    tag: "New Cut",
-    description: "Свободная посадка с акцентом на длину и фактуру ткани.",
+    tag: "New",
+    description: "Черный матовый силуэт с четкими швами и премиальной геометрией.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    tech: ["260 GSM", "Drop Shoulder", "Street Cut"],
   },
   {
-    title: "Night Flight Case",
+    title: "IVT iPhone 17 Case",
     category: "Чехол",
     price: "1 790 ₽",
-    image: "/catalog/case-01.jpg",
-    tag: "Protect",
-    description: "Матовый чехол с контрастной графикой и сильным фокусом.",
+    image: "/catalog/case-iphone-17.jpg",
+    tag: "Latest",
+    description: "Тонкий матовый корпус с усиленными углами и мягкой посадкой.",
+    compatibility: ["iPhone 17", "MagSafe", "Drop 2m"],
+    tech: ["TPU + PC", "Anti-Yellow", "Soft Touch"],
   },
   {
-    title: "Carbon Grip Case",
+    title: "IVT iPhone 17 Pro Case",
     category: "Чехол",
     price: "1 990 ₽",
-    image: "/catalog/case-02.jpg",
-    tag: "Premium",
-    description: "Тонкий, цепкий, визуально дорогой кейс под daily-сетап.",
+    image: "/catalog/case-iphone-17pro.jpg",
+    tag: "Pro Shield",
+    description: "Премиальный слим-кейс под камеру Pro и ежедневный intense-режим.",
+    compatibility: ["iPhone 17 Pro", "MagSafe", "Camera Guard"],
+    tech: ["Aero Frame", "Microfiber", "Scratch Resist"],
+  },
+  {
+    title: "IVT iPhone 17 Pro Max Case",
+    category: "Чехол",
+    price: "2 090 ₽",
+    image: "/catalog/case-iphone-17promax.jpg",
+    tag: "Flagship",
+    description: "Чистая геометрия и усиленная защита для 6.9-дюймовой Pro Max.",
+    compatibility: ["iPhone 17 Pro Max", "MagSafe", "Raised Bezel"],
+    tech: ["6.9-inch fit", "Shock Absorb", "Matte Shell"],
+  },
+  {
+    title: "IVT MacBook Pro Armor Sleeve",
+    category: "Чехол Mac",
+    price: "3 990 ₽",
+    image: "/catalog/macbook-case-01.jpg",
+    tag: "Mac Series",
+    description: "Минималистичный рукав для Pro-серии с плотной амортизацией.",
+    compatibility: ["MacBook Pro 14 (M5/M4 Pro)", "MacBook Pro 16 (M5/M4 Max)"],
+    tech: ["Zip Guard", "Padded Walls", "Water Repel"],
+  },
+  {
+    title: "IVT MacBook Air Tactical Sleeve",
+    category: "Чехол Mac",
+    price: "4 290 ₽",
+    image: "/catalog/macbook-case-02.png",
+    tag: "Air Series",
+    description: "Легкий чехол для Air-линейки с акцентом на износостойкость.",
+    compatibility: ["MacBook Air 13 (M4)", "MacBook Air 15 (M4)"],
+    tech: ["Lightweight", "Impact Zones", "Travel Safe"],
   },
 ];
 
 const highlights = [
   {
-    icon: Shirt,
-    title: "Крой и посадка",
-    text: "Каждая вещь отснята и показана так, чтобы текстура читалась без фильтров.",
+    icon: Cpu,
+    title: "IVT DNA",
+    text: "Каждая позиция собрана в эстетике ИВТ: clean-типографика, инженерный характер, premium-финиш.",
   },
   {
-    icon: Smartphone,
-    title: "Аксессуары",
-    text: "Чехлы подобраны с акцентом на премиальный вид и тактильный контроль.",
+    icon: Cable,
+    title: "Совместимость",
+    text: "Свежие линейки под iPhone 17 и актуальные MacBook (M5/M4), чтобы сетап был цельным.",
   },
   {
-    icon: ShieldCheck,
+    icon: ShieldAlert,
     title: "Контроль качества",
-    text: "Проверка каждой позиции перед публикацией и стабильный цвет в каталоге.",
+    text: "Материалы, швы и посадка проходят ручную проверку перед публикацией дропа.",
   },
 ];
 
 export const Home = () => {
   return (
     <div className="space-y-8 md:space-y-12">
-      <section className="glass relative overflow-hidden rounded-[2rem] p-6 sm:p-8 lg:p-10">
+      <section className="glass liquid-panel relative overflow-hidden rounded-[2rem] p-6 sm:p-8 lg:p-10">
         <div className="pointer-events-none absolute -left-20 top-10 size-56 rounded-full bg-primary/25 blur-3xl" />
         <div className="pointer-events-none absolute -right-20 -top-20 size-72 rounded-full bg-cyan-200/45 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 left-1/3 size-72 rounded-full bg-violet-200/45 blur-3xl" />
+        <div className="noise-layer" />
 
         <div className="relative grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div className="space-y-6">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-primary shadow-sm">
               <Sparkles className="size-3.5" />
-              Fresh Liquid Collection
+              IVT Merch Lab
             </span>
 
-            <h1 className="font-display text-4xl leading-tight text-foreground sm:text-5xl lg:text-6xl">
-              Светлый fashion-каталог с безумным motion и стеклянным вайбом
+            <h1 className="font-display text-gradient-motion text-4xl leading-tight sm:text-5xl lg:text-6xl">
+              Премиальный ИВТ-мерч: одежда и чехлы с безумным liquid-motion
             </h1>
 
             <p className="max-w-2xl text-base text-muted-foreground sm:text-lg">
-              Мы сделали интерфейс ярче, живее и жирнее по анимациям: liquid glass-панели,
-              воздушные градиенты, динамичные карточки и фотостудийная подача каждого дропа.
+              Светлый интерфейс на максималках: liquid-glass панели, яркие энергетические
+              орбы, aggressive hover-динамика и витрина, где каждый айтем выглядит как
+              студийный premium-shot.
             </p>
 
             <div className="flex flex-wrap gap-3">
               <Button asChild className="rounded-xl px-6">
                 <Link to="/register" className="inline-flex items-center gap-2">
-                  Забрать дроп
+                  Забрать IVT Drop
                   <ArrowRight className="size-4" />
                 </Link>
               </Button>
@@ -112,23 +158,40 @@ export const Home = () => {
                 <a href="#catalog">Смотреть каталог</a>
               </Button>
             </div>
+
+            <div className="flex flex-wrap gap-2">
+              {[
+                "iPhone 17 Series",
+                "MacBook Pro M5/M4",
+                "MacBook Air M4",
+                "XS-XXL Sizes",
+              ].map((pill, idx) => (
+                <span
+                  key={pill}
+                  className="floating-pill glass-soft rounded-full px-3 py-1 text-xs font-semibold text-foreground/80"
+                  style={{ animationDelay: `${idx * 180}ms` }}
+                >
+                  {pill}
+                </span>
+              ))}
+            </div>
           </div>
 
-          <div className="floaty glass-strong relative rounded-3xl p-5 sm:p-6">
+          <div className="floaty glass-strong glow-ring relative rounded-3xl p-5 sm:p-6">
             <div className="absolute inset-0 rounded-3xl border border-white/70" />
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">
-              LIVE METRICS
+              LIVE DROP METRICS
             </p>
             <div className="mt-4 grid grid-cols-2 gap-3">
               {[
                 ["24h", "Время обновления"],
-                ["6", "Фотореал карточек"],
-                ["+34%", "Визуальный импакт"],
+                ["9", "Премиум карточек"],
+                ["+78%", "Визуальный импакт"],
                 ["100%", "Liquid glass vibe"],
               ].map(([value, label], idx) => (
                 <div
                   key={label}
-                  className="glass rounded-2xl p-3 stagger-in"
+                  className="glass rounded-2xl p-3 stagger-in card-breathe"
                   style={{ animationDelay: `${idx * 120}ms` }}
                 >
                   <p className="font-display text-2xl font-bold text-foreground">{value}</p>
@@ -146,11 +209,13 @@ export const Home = () => {
             {Array.from({ length: 2 }).map((_, i) => (
               <span key={i} className="inline-flex items-center gap-2 pr-10 text-sm font-semibold">
                 <Orbit className="size-4 text-primary" />
-                Liquid Glass UI
+                IVT Premium Merch
                 <Sparkles className="size-4 text-primary" />
-                Studio Product Shots
+                Liquid Glass UI
                 <ArrowRight className="size-4 text-primary" />
-                Crazy Smooth Animations
+                Hyper Animations
+                <Atom className="size-4 text-primary" />
+                Studio Product Shots
               </span>
             ))}
           </div>
@@ -161,10 +226,10 @@ export const Home = () => {
         <div className="flex items-end justify-between gap-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">
-              Catalog Drop
+              Catalog Drop / ИВТ Merch
             </p>
             <h2 className="font-display mt-2 text-3xl text-foreground sm:text-4xl">
-              Худи, чехлы и футболки
+              Худи, футболки, iPhone и MacBook чехлы
             </h2>
           </div>
         </div>
@@ -173,7 +238,7 @@ export const Home = () => {
           {products.map((product, idx) => (
             <article
               key={product.title}
-              className="glass group overflow-hidden rounded-3xl p-3 stagger-in"
+              className="glass product-card tilt-crazy group overflow-hidden rounded-3xl p-3 stagger-in"
               style={{ animationDelay: `${idx * 90}ms` }}
             >
               <div className="relative overflow-hidden rounded-2xl">
@@ -206,6 +271,44 @@ export const Home = () => {
 
                 <p className="text-sm text-muted-foreground">{product.description}</p>
 
+                {product.sizes ? (
+                  <div className="space-y-2">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                      Размеры
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {product.sizes.map((size) => (
+                        <span key={size} className="size-chip">
+                          {size}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+
+                {product.compatibility ? (
+                  <div className="space-y-2">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+                      Совместимость
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {product.compatibility.map((device) => (
+                        <span key={device} className="size-chip">
+                          {device}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+
+                <div className="flex flex-wrap gap-1.5">
+                  {product.tech.map((point) => (
+                    <span key={point} className="rounded-full bg-white/70 px-2.5 py-1 text-[11px] text-foreground/70">
+                      {point}
+                    </span>
+                  ))}
+                </div>
+
                 <Button className="group/btn mt-2 w-full rounded-xl" asChild>
                   <Link to="/register" className="inline-flex items-center justify-center gap-2">
                     Взять в коллекцию
@@ -222,7 +325,7 @@ export const Home = () => {
         {highlights.map((item, idx) => (
           <article
             key={item.title}
-            className="glass rounded-2xl p-5 stagger-in"
+            className="glass rounded-2xl p-5 stagger-in card-breathe"
             style={{ animationDelay: `${idx * 120}ms` }}
           >
             <div className="inline-flex size-10 items-center justify-center rounded-xl bg-primary/15 text-primary">
@@ -232,6 +335,30 @@ export const Home = () => {
             <p className="mt-2 text-sm text-muted-foreground">{item.text}</p>
           </article>
         ))}
+      </section>
+
+      <section className="glass-soft relative overflow-hidden rounded-3xl p-6 sm:p-8">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(125,211,252,.35),transparent_35%),radial-gradient(circle_at_90%_10%,rgba(196,181,253,.3),transparent_35%),radial-gradient(circle_at_60%_80%,rgba(110,231,183,.28),transparent_40%)]" />
+        <div className="relative grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary/80">
+              Next Drop
+            </p>
+            <h3 className="font-display mt-2 text-2xl text-foreground sm:text-3xl">
+              IVT Capsule 02 уже в прогреве
+            </h3>
+            <p className="mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
+              Вторая волна: светлые и черные футболки, худи в новых оттенках и расширенная
+              линейка tech-кейсов. Ранний доступ по регистрации.
+            </p>
+          </div>
+          <Button asChild className="rounded-xl px-7 py-6 text-base">
+            <Link to="/register" className="inline-flex items-center gap-2">
+              Войти в waitlist
+              <ArrowRight className="size-4" />
+            </Link>
+          </Button>
+        </div>
       </section>
     </div>
   );

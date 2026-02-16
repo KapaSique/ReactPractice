@@ -30,7 +30,7 @@ export const Header = () => {
           <span className="flex size-8 items-center justify-center rounded-xl bg-primary/15 text-primary">
             <Sparkles className="size-4" />
           </span>
-          Liquid Drop
+          IVT Merch Lab
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -58,7 +58,7 @@ export const Header = () => {
             <Link to="/login">Войти</Link>
           </Button>
           <Button className="rounded-xl bg-primary/90 text-primary-foreground hover:bg-primary" asChild>
-            <Link to="/register">Залететь в дроп</Link>
+            <Link to="/register">Войти в дроп</Link>
           </Button>
         </div>
 
@@ -76,7 +76,7 @@ export const Header = () => {
 
           <SheetContent side="right" className="glass border-white/50">
             <SheetHeader>
-              <SheetTitle className="font-display text-left text-lg">Liquid Drop</SheetTitle>
+              <SheetTitle className="font-display text-left text-lg">IVT Merch Lab</SheetTitle>
             </SheetHeader>
 
             <nav className="mt-4 flex flex-col gap-2 px-4">
@@ -104,7 +104,7 @@ export const Header = () => {
               </Button>
               <Button className="justify-start rounded-xl" asChild>
                 <Link to="/register" onClick={() => setOpen(false)}>
-                  Залететь в дроп
+                  Войти в дроп
                 </Link>
               </Button>
             </nav>

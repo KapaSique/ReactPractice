@@ -210,6 +210,143 @@
   animation: marquee-slide 18s linear infinite;
 }
 
+.liquid-panel {
+  isolation: isolate;
+}
+
+.liquid-panel::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: -1px;
+  z-index: 0;
+  border-radius: inherit;
+  background:
+    linear-gradient(130deg, rgba(255, 255, 255, 0.65), transparent 35%),
+    linear-gradient(310deg, rgba(56, 189, 248, 0.32), transparent 46%),
+    linear-gradient(25deg, rgba(167, 139, 250, 0.26), transparent 52%);
+  mix-blend-mode: screen;
+  opacity: 0.92;
+}
+
+.noise-layer {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.24;
+  background-image:
+    linear-gradient(110deg, rgba(255, 255, 255, 0.24) 0%, transparent 45%),
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.22) 0%, transparent 44%),
+    repeating-linear-gradient(
+      -35deg,
+      rgba(15, 23, 42, 0.03) 0 2px,
+      transparent 2px 8px
+    );
+}
+
+.text-gradient-motion {
+  color: transparent;
+  background:
+    linear-gradient(
+      115deg,
+      oklch(0.47 0.16 236),
+      oklch(0.63 0.2 221),
+      oklch(0.57 0.22 290),
+      oklch(0.46 0.16 236)
+    );
+  background-size: 210% 210%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: text-flow 7.5s ease infinite;
+}
+
+.floating-pill {
+  animation: pill-float 7s ease-in-out infinite;
+}
+
+.glow-ring::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: -35%;
+  border-radius: inherit;
+  z-index: -1;
+  background: conic-gradient(
+    from 110deg,
+    rgba(56, 189, 248, 0.32),
+    rgba(59, 130, 246, 0.1),
+    rgba(139, 92, 246, 0.2),
+    rgba(16, 185, 129, 0.2),
+    rgba(56, 189, 248, 0.32)
+  );
+  filter: blur(34px);
+  animation: glow-pulse 9s ease-in-out infinite;
+}
+
+.product-card {
+  transition:
+    transform 430ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 430ms ease,
+    border-color 430ms ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.product-card::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.36), transparent 42%);
+  mix-blend-mode: screen;
+  opacity: 0.75;
+}
+
+.product-card::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: -120% -40%;
+  transform: rotate(18deg);
+  background: linear-gradient(
+    90deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.46) 50%,
+    transparent 80%
+  );
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.product-card:hover::after {
+  opacity: 1;
+  animation: shine-pass 1.1s ease;
+}
+
+.tilt-crazy:hover {
+  transform: perspective(1200px) rotateX(4deg) rotateY(-6deg) translateY(-8px);
+  box-shadow: 0 24px 44px rgba(31, 78, 121, 0.2);
+  border-color: rgba(255, 255, 255, 0.92);
+}
+
+.size-chip {
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 0.26rem 0.58rem;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: rgba(30, 41, 59, 0.85);
+}
+
+.card-breathe {
+  animation: card-breathe 5.8s ease-in-out infinite;
+}
+
 @keyframes orb-drift {
   0%,
   100% {
@@ -252,11 +389,67 @@
   }
 }
 
+@keyframes text-flow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pill-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.72;
+  }
+  50% {
+    transform: rotate(8deg) scale(1.06);
+    opacity: 0.92;
+  }
+}
+
+@keyframes shine-pass {
+  from {
+    transform: rotate(18deg) translateX(-22%);
+  }
+  to {
+    transform: rotate(18deg) translateX(22%);
+  }
+}
+
+@keyframes card-breathe {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .orb,
   .floaty,
   .stagger-in,
-  .marquee-track {
+  .marquee-track,
+  .floating-pill,
+  .glow-ring::before,
+  .card-breathe,
+  .text-gradient-motion,
+  .product-card:hover::after {
     animation: none !important;
     transform: none !important;
     opacity: 1 !important;

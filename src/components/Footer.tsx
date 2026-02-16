@@ -20,11 +20,11 @@ export const Footer = () => {
         <div className="grid gap-8 md:grid-cols-3">
           <div className="space-y-3">
             <Link to="/" className="font-display text-xl font-bold tracking-tight text-foreground">
-              Liquid Drop
+              IVT Merch Lab
             </Link>
             <p className="max-w-sm text-sm text-muted-foreground">
-              Светлый fashion-каталог с liquid-glass вайбом, живым motion и фотостудийной
-              подачей коллекций.
+              Премиальный ИВТ-каталог со светлым liquid-glass стилем, студийной подачей
+              вещей и тех-аксессуаров.
             </p>
           </div>
 
@@ -68,7 +68,7 @@ export const Footer = () => {
         </div>
 
         <div className="mt-8 border-t border-white/60 pt-4 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Liquid Drop. Made for IMI Labs.
+          © {new Date().getFullYear()} IVT Merch Lab. Made for IMI Labs.
         </div>
       </div>
     </footer>
